@@ -1,13 +1,15 @@
 use structopt::StructOpt;
 
-/// Super smashing program here!
+/// Draw neat plots in your terminal!
 #[derive(Debug, StructOpt)]
 pub enum Subcommands {
     Histogram(Histogram),
     Scatterplot(Scatterplot),
 }
 
-/// Boop beep bop
+/// Draw histograms
+///
+/// Input should be one column of numbers.
 #[derive(Debug, StructOpt)]
 pub struct Histogram {
     // better default would be to calculate a good one
@@ -20,7 +22,7 @@ pub struct Histogram {
     pub height: u8,
 
     /// What char to use for the bars?
-    #[structopt(long, default_value = "◾")]
+    #[structopt(long, default_value = "*")]
     pub char: char,
 
     /// What do you want for the axis?
@@ -28,7 +30,9 @@ pub struct Histogram {
     pub axis: String,
 }
 
-/// Silly thing
+/// Draw scatterplots
+///
+/// Input should be two columns of numbers: 1st is x-values, 2nd is y-values.
 #[derive(Debug, StructOpt)]
 pub struct Scatterplot {
     /// What char to use for the points?
