@@ -56,3 +56,36 @@ impl Range<usize> {
         max - min
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    mod test_new_range_f64 {
+        use super::*;
+
+        #[test]
+        fn with_all_positive_numbers_works() {
+            let range = Range::<f64>::new(0.0, 10.0);
+            assert_eq!(range.range, 10.0);
+
+            let range = Range::<f64>::new(1.0, 10.0);
+            assert_eq!(range.range, 9.0);
+        }
+
+        #[test]
+        fn with_all_negative_numbers_works() {
+            let range = Range::<f64>::new(-10.0, 0.0);
+            assert_eq!(range.range, 10.0);
+
+            let range = Range::<f64>::new(-10.0, -1.0);
+            assert_eq!(range.range, 9.0);
+        }
+
+        #[test]
+        fn with_mixed_numbers_works() {
+            let range = Range::<f64>::new(-10.0, 10.0);
+            assert_eq!(range.range, 20.0);
+        }
+    }
+}
