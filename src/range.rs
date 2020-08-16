@@ -1,8 +1,20 @@
+use std::fmt::{self, Display};
+
 #[derive(Debug)]
 pub struct Range<T> {
     pub min: T,
     pub max: T,
     pub range: T,
+}
+
+impl<T: Display> Display for Range<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "min: {:.2}, max: {:.2}, range: {:.2}",
+            self.min, self.max, self.range
+        )
+    }
 }
 
 impl Range<f64> {

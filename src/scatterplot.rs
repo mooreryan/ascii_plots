@@ -9,6 +9,8 @@ pub fn scatterplot(opts: Scatterplot) {
 
     let points = Points::get_points();
 
+    eprintln!("x range -- {}\ny range -- {}", points.xrange, points.yrange);
+
     let viewer_xrange = Range::<usize>::new(0_usize, opts.width - 1);
     let viewer_yrange = Range::<usize>::new(0_usize, opts.height - 1);
 
