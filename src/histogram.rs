@@ -117,20 +117,6 @@ pub fn histogram(opts: Histogram) {
 mod tests {
     use super::*;
 
-    mod test_bin_data {
-        // use super::*;
-
-        // fn bin_data_works() {
-        //     let mut data = vec![3.0, 8.0, 2.4, 14.0, -3.0, -7.0, 5.0, 0.0, -5.0];
-        //
-        //     data.sort_by(|a, b| a.partial_cmp(b).unwrap());
-        //
-        //     let nbins = 5;
-        //
-        //     let binned_data = bin_data(&data, nbins);
-        // }
-    }
-
     mod test_get_bar_height {
         use super::*;
 
