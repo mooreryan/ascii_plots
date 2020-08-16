@@ -43,5 +43,3 @@ pub struct Scatterplot {
     #[structopt(long, default_value = "20")]
     pub height: usize,
 }
-
-// todo allow float steps...better for small numbers

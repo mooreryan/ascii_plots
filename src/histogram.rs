@@ -3,7 +3,6 @@ use crate::utils;
 use std::io::{self, BufRead};
 
 // todo give option for left open or right open
-// todo test me
 /// Assumes data is sorted.
 fn bin_data(data: &[f64], nbins: u8) -> Vec<u32> {
     let min = utils::get_min(&data);
@@ -23,7 +22,6 @@ fn bin_data(data: &[f64], nbins: u8) -> Vec<u32> {
             let right_break = breaks[i + 1];
 
             // todo would be nice to make this some sort of tree structure
-            // todo both sides being closed is also not quite right....
             if left_break <= datum && datum <= right_break {
                 bins[i] += 1;
 
@@ -58,7 +56,6 @@ fn get_breaks_bins_specified(min: f64, max: f64, step: f64, nbins: u8) -> Vec<f6
     v
 }
 
-// TODO in R changing the number of breaks doesn't always give you that many bins...depends on the data I think
 fn get_step(min: f64, max: f64, num_bins: u8) -> f64 {
     assert!(min < max);
     assert!(num_bins > 0);
@@ -160,8 +157,6 @@ mod tests {
             assert_eq!(get_step(0.0, 10.0, 20), 0.5);
             assert_eq!(get_step(-10.0, 10.0, 1), 20.0);
             assert_eq!(get_step(-10.0, 5.0, 5), 3.0);
-
-            // todo would be 4.2, but rounding to 5...this is a bit wonky
             assert_eq!(get_step(-7.0, 14.0, 5), 4.2);
         }
 
