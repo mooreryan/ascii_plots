@@ -18,7 +18,7 @@ pub struct Histogram {
     pub bins: u8,
 
     /// How long should the bars be?
-    #[structopt(long, default_value = "70")]
+    #[structopt(long, default_value = "80")]
     pub height: u8,
 
     /// What char to use for the bars?
