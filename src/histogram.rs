@@ -75,11 +75,13 @@ fn get_step(min: f64, max: f64, num_bins: u8) -> f64 {
 }
 
 fn draw_bars(bar_heights: &[u8], bar_char: char, axis: &str) {
+    println!();
     for &height in bar_heights {
         let bar: String = std::iter::repeat(bar_char).take(height as usize).collect();
 
         println!("{}{}", axis, bar);
     }
+    println!();
 }
 
 pub fn histogram(opts: Histogram) {
@@ -93,6 +95,12 @@ pub fn histogram(opts: Histogram) {
                 .expect("couldn't parse line!")
         })
         .collect::<Vec<f64>>();
+
+    eprintln!(
+        "min: {:.2}, max: {:.2}",
+        utils::get_min(&numbers),
+        utils::get_max(&numbers)
+    );
 
     let bins = bin_data(&numbers, opts.bins);
     let max_count = bins.iter().max().unwrap();
