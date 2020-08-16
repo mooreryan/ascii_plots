@@ -35,13 +35,11 @@ pub struct Scatterplot {
     #[structopt(long, default_value = "*")]
     pub char: char,
 
-    /// What aspect ratio?
-    #[structopt(long, default_value = "0")]
-    pub aspect_ratio: f64,
-
+    /// Chart width
     #[structopt(long, default_value = "80")]
     pub width: usize,
 
+    /// Chart height
     #[structopt(long, default_value = "20")]
     pub height: usize,
 }

@@ -3,10 +3,6 @@ use crate::point::Points;
 use crate::range::Range;
 
 pub fn scatterplot(opts: Scatterplot) {
-    if opts.aspect_ratio != 0.0 {
-        panic!("todo implement fixed aspect ratio");
-    }
-
     let points = Points::get_points();
 
     eprintln!("x range -- {}\ny range -- {}", points.xrange, points.yrange);
