@@ -4,6 +4,7 @@ use structopt::StructOpt;
 #[derive(Debug, StructOpt)]
 pub enum Subcommands {
     Histogram(Histogram),
+    Scatterplot(Scatterplot),
 }
 
 /// Boop beep bop
@@ -25,6 +26,24 @@ pub struct Histogram {
     /// What do you want for the axis?
     #[structopt(long, default_value = "| ")]
     pub axis: String,
+}
+
+/// Silly thing
+#[derive(Debug, StructOpt)]
+pub struct Scatterplot {
+    /// What char to use for the points?
+    #[structopt(long, default_value = "*")]
+    pub char: char,
+
+    /// What aspect ratio?
+    #[structopt(long, default_value = "0")]
+    pub aspect_ratio: f64,
+
+    #[structopt(long, default_value = "80")]
+    pub width: usize,
+
+    #[structopt(long, default_value = "20")]
+    pub height: usize,
 }
 
 // todo allow float steps...better for small numbers
