@@ -4,6 +4,12 @@ Make snazzy plots in your terminal!
 
 ## Install
 
+### Binaries
+
+Check the [releases](https://github.com/mooreryan/ascii_plots/releases) page to download the latest release for Mac, Linux, and Windows!
+
+### From source
+
 From GitHub, assuming you have [Rust installed](https://www.rust-lang.org/tools/install):
 
 ```
