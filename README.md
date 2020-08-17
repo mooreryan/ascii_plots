@@ -1,6 +1,8 @@
-# ASCII Plots
+# ASCII Plots 
 
 Make snazzy plots in your terminal!
+
+[![Build Status](https://travis-ci.org/mooreryan/ascii_plots.svg?branch=master)](https://travis-ci.org/mooreryan/ascii_plots)
 
 ## Install
 
